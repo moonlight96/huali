@@ -1,0 +1,444 @@
+@charset "utf-8";
+/*  ==========
+*   = 2019移动端 空购物车  样式代码 =
+*   ==========*/
+body {
+  width: 100%;
+  max-width: 640px;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #232628;
+  font-family: SourceHanSansCN, -apple-system, Verdana, Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body.overflow-hidden {
+  overflow: hidden;
+}
+div,
+ul,
+ol,
+dl,
+p,
+pre,
+section,
+article,
+aside,
+li,
+nav,
+input,
+textarea {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input,
+textarea,
+select {
+  outline: none;
+  appearance: none;
+}
+input::-webkit-autofill,
+textarea::-webkit-autofill,
+select::-webkit-autofill {
+  background-color: transparent;
+  background-image: none;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+ul,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-focus-ring-color: transparent;
+}
+i,
+em,
+strong {
+  font-style: normal;
+}
+.iconfont {
+  font-size: inherit;
+}
+.navigation {
+  display: block;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-overflow-line2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-overflow-line3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html,
+body {
+  background: #E9ECF0;
+}
+@media screen and (max-width: 267px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 268px) and (max-width: 294px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 295px) and (max-width: 321px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 348px) and (max-width: 374px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 401px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 402px) and (max-width: 428px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 429px) and (max-width: 455px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 456px) and (max-width: 482px) {
+  html,
+  body {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 483px) and (max-width: 508px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 509px) and (max-width: 535px) {
+  html,
+  body {
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 536px) and (max-width: 562px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 563px) and (max-width: 589px) {
+  html,
+  body {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 590px) and (max-width: 616px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 617px) and (max-width: 639px) {
+  html,
+  body {
+    font-size: 23px;
+  }
+}
+@media screen and (min-width: 640px) {
+  html,
+  body {
+    font-size: 24px;
+  }
+}
+.bag .headerbar {
+  display: flex;
+  height: 3.14285714rem;
+  line-height: 3.14285714rem;
+  background: #fff;
+}
+.headerbar-left,
+.headerbar-right {
+  width: 6.28571429rem;
+  height: 3.14285714rem;
+  font-size: 0;
+}
+.headerbar-left > .navigation,
+.headerbar-right > .navigation {
+  display: inline-block;
+  width: 3.14285714rem;
+  height: 3.14285714rem;
+  text-align: center;
+}
+.headerbar-left > .navigation .iconfont,
+.headerbar-right > .navigation .iconfont {
+  font-size: 1.42857143rem;
+}
+.headerbar-left {
+  text-align: left;
+}
+.headerbar-right {
+  text-align: right;
+}
+.headerbar-center {
+  flex: 1;
+  max-width: 14.14285714rem;
+  max-width: calc(100% - 12.57142857rem);
+  text-align: center;
+}
+.headerbar-content {
+  font-size: 1.14285714rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.headerbar-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0.57142857rem;
+  z-index: 9;
+  background: #fff;
+  border: 1px solid #E9ECF0;
+  border-radius: 0.28571429rem;
+  box-shadow: 0 4px 12px 0 #E9ECF0;
+}
+.headerbar-menu.active {
+  display: block;
+}
+.headerbar-menu::before {
+  content: "";
+  position: absolute;
+  top: -0.28571429rem;
+  right: 0.85714286rem;
+  width: 0.28571429rem;
+  height: 0.28571429rem;
+  background: #fff;
+  border-top: 1px solid #E9ECF0;
+  border-left: 1px solid #E9ECF0;
+  transform: rotate(45deg);
+}
+.headerbar-menu-toggle {
+  position: relative;
+}
+.headerbar-menu-item {
+  width: 6.85714286rem;
+  height: 3.42857143rem;
+  text-align: left;
+}
+.headerbar-menu-item > .navigation {
+  padding: 0 0.85714286rem;
+  font-size: 14px;
+  color: #232628;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.headerbar-menu-item > .navigation > .iconfont {
+  vertical-align: middle;
+}
+.headerbar-menu-item > .navigation > span {
+  margin-left: 0.42857143rem;
+}
+.scrollbox {
+  position: fixed;
+  bottom: 7.14285714rem;
+  right: 0.57142857rem;
+  z-index: 10;
+  display: none;
+}
+.scrollbox-item {
+  display: block;
+  width: 2.57142857rem;
+  height: 2.57142857rem;
+  line-height: 2.57142857rem;
+  text-align: center;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0.28571429rem 0.42857143rem 0 #dee2e5;
+  cursor: pointer;
+}
+.scrollbox-item:active {
+  background: #F7F9FA;
+}
+.scrollbox-item > .iconfont {
+  font-size: 1.42857143rem;
+}
+.scrollbox-item + .scrollbox-item {
+  margin-top: 2.28571429rem;
+}
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  overflow: hidden;
+  background: #F7F9FA;
+}
+.tabbar-item {
+  flex: 1;
+  text-align: center;
+}
+.tabbar-item.active {
+  color: #FF734C;
+}
+.tabbar-item.active .iconfont.iconfont-home::before {
+  content: "\e662";
+}
+.tabbar-item.active .iconfont.iconfont-category::before {
+  content: "\e65f";
+}
+.tabbar-item.active .iconfont.iconfont-smile::before {
+  content: "\e665";
+}
+.tabbar-item > .navigation {
+  height: 3.5rem;
+  padding-top: 0.28571429rem;
+  box-sizing: border-box;
+}
+.tabbar-item .iconfont {
+  font-size: 1.71428571rem;
+  margin-top: 0.42857143rem;
+  position: relative;
+}
+.tabbar-item .iconfont[data-dot]::after {
+  content: " ";
+  width: 0.42857143rem;
+  height: 0.42857143rem;
+  padding: 0;
+  min-width: auto;
+}
+.tabbar-item .iconfont::after {
+  content: attr(data-cartnum);
+  position: absolute;
+  top: 0;
+  left: 90%;
+  min-width: 0.71428571rem;
+  line-height: 1;
+  padding: 0 0.14285714rem;
+  font-size: 0.71428571rem;
+  color: #fff;
+  background: #FF734C;
+  border-radius: 1rem;
+}
+.tabbar-item .iconfont::after:empty {
+  display: none;
+}
+.tabbar-item p {
+  font-size: 0.78571429rem;
+}
+section.main .emptycart {
+  border-top: 1px solid #E9ECF0;
+  background-color: #fff;
+  padding: 3.14285714rem 0 2.28571429rem;
+  text-align: center;
+}
+section.main .emptycart img.img {
+  width: 7.14285714rem;
+  height: 7.14285714rem;
+}
+section.main .emptycart p.text {
+  margin-top: 1.14285714rem;
+  color: #232628;
+  font-size: 1rem;
+}
+section.main .guess {
+  margin-top: 0.57142857rem;
+  padding-bottom: 3.5rem;
+  background-color: #fff;
+}
+section.main .guess-title {
+  height: 4rem;
+  font-size: 1.14285714rem;
+  color: #232628;
+  padding: 0 1.14285714rem;
+  line-height: 4rem;
+}
+section.main .guess-list {
+  font-size: 0;
+  padding: 0 1.2%;
+}
+section.main .guess-item {
+  display: inline-block;
+  width: 48.08743169%;
+  margin: 0 0.93333333% 0.57142857rem;
+  border-radius: 0.28571429rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 4px 6px 0px #dee2e5;
+  box-shadow: 0px 4px 6px 0px #dee2e5;
+}
+section.main .guess-item-detail {
+  height: 3.71428571rem;
+  padding: 0.42857143rem 0.57142857rem;
+}
+section.main .guess-item-detail .guess-item-info {
+  font-size: 0.85714286rem;
+  color: #232628;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+section.main .guess-item-detail .guess-item-price {
+  margin-top: 0.42857143rem;
+  font-size: 1rem;
+  color: #FF734C;
+}
+section.main .guess-bottom {
+  height: 2.57142857rem;
+  margin-top: 0.14285714rem;
+  text-align: center;
+  font-size: 0.85714286rem;
+  line-height: 2.57142857rem;
+  color: #71797F;
+}
