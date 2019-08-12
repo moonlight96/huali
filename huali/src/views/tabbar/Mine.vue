@@ -19,12 +19,27 @@
     >
       <!--Dev::第三方登录:添加class：userinformation-hastips-->
       <div class="userinformation">
-        <div class="userinformation-notlogin">
+        <div class="userinformation-notlogin"  v-show="login">
           <p class="userinformation-notlogin-hi">Hi,欢迎来到花礼网</p>
           <p class="userinformation-notlogin-gologin">
-            <a href="/Passport/Login/?ReturnUrl=/Member/MemberCenter/">登录/注册</a>
+            <a @click="navTo('/login')">登录/注册</a>
+            
           </p>
         </div>
+        <div class="userinformation-login" v-show="!login">
+                    <div class="userinformation-login-pic">
+                        <a href="/Member/AccountSetting/PersonInfoManageV1" class="navigation"><img src="//img02.hua.com/pc/assets/img/avatar_default_04.jpg" alt="用户头像"></a>
+                    </div>
+                    <div class="userinformation-login-info">
+                        <p class="userinformation-login-info-name" v-text="name"></p>
+                        <!--Dev::label-grade-1 注册会员-->
+                        <!--Dev::label-grade-2 VIP会员-->
+                        <!--Dev::label-grade-3 钻石会员-->
+                        <a href="/Member/MemberCenter/MemberRights">
+                            <p class="userinformation-login-info-grade"><span class="label-grade label-grade-1">注册会员</span></p>
+                        </a>
+                    </div>
+                </div>
         <!--Dev::第三方登录-->
       </div>
       <div id="stoporder" class="tips" style="padding:0;height:auto;">
@@ -172,10 +187,30 @@
 <script>
 // import "../../assets/membercenter.css";
 export default {
+  data () {
+    return {
+      login:this.init,
+      name:localStorage.getItem('isLogin')
+    }
+  },
   methods: {
+    init(){
+      if(localStorage.getItem('isLogin')){
+        this.login=false
+      }else{
+        this.login=true
+      }
+      console.log(this.login);
+    },
     backTo(){
       this.$router.go(-1);
+    },
+    navTo(url){
+      this.$router.push( url )
     }
+  },
+  mounted () {
+    this.init()
   }
 };
 </script>

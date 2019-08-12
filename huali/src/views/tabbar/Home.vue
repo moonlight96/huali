@@ -228,7 +228,7 @@
       <h3 class="product-title">送恋人/爱情鲜花</h3>
       <div class="product-list">
         <div class="product-item product-item-horizontal" v-for="(n,index) in lovers" :key="index">
-          <a @click="navTo('/detail')" class="navigation">
+          <a @click="navTo(index)" class="navigation">
             <div class="product-item-pic">
               <img :src="n.pic" :alt="n.name" />
             </div>
@@ -267,7 +267,7 @@
       <h3 class="product-title">送长辈鲜花</h3>
       <div class="product-list">
         <div class="product-item product-item-horizontal">
-          <a href="/product/9012189.html?huaPid=homepage-f201" class="navigation">
+          <a  class="navigation">
             <div class="product-item-pic">
               <img src="https://img01.hua.com/uploadpic/newpic/9012189.jpg_220x240.jpg" alt="恩情无限" />
             </div>
@@ -295,7 +295,7 @@
           </a>
         </div>
         <div class="product-item product-item-horizontal">
-          <a href="/product/9012201.html?huaPid=homepage-f202" class="navigation">
+          <a  class="navigation">
             <div class="product-item-pic">
               <img src="https://img01.hua.com/uploadpic/newpic/9012201.jpg_220x240.jpg" alt="馨情无限" />
             </div>
@@ -323,7 +323,7 @@
           </a>
         </div>
         <div class="product-item product-item-horizontal">
-          <a href="/product/9010736.html?huaPid=homepage-f203" class="navigation">
+          <a  class="navigation">
             <div class="product-item-pic">
               <img src="https://img01.hua.com/uploadpic/newpic/9010736.jpg_220x240.jpg" alt="感激" />
             </div>
@@ -348,7 +348,7 @@
           </a>
         </div>
         <div class="product-item product-item-horizontal">
-          <a href="/product/9012204.html?huaPid=homepage-f204" class="navigation">
+          <a  class="navigation">
             <div class="product-item-pic">
               <img src="https://img01.hua.com/uploadpic/newpic/9012204.jpg_220x240.jpg" alt="幸福万年长" />
             </div>
@@ -1007,8 +1007,11 @@ export default {
       localStorage.setItem("show", "none");
       this.init();
     },
-    navTo(url) {
-      this.$router.push(url);
+    navTo(id) {
+      this.$router.push({
+        name:'detail',
+        query: {id}
+      });
     }
   },
   mounted() {

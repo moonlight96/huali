@@ -5,6 +5,9 @@
   background: #e9ecf0;
   font-size: 15px;
 }
+.collect {
+  display: none;
+}
 </style>
 
 <template>
@@ -77,9 +80,10 @@
           <span class="text-orange" v-text="hua.promo"></span>
         </div>
         <div class="proinfo-head-collect">
-          <a href="javascript:;" class="navigation">
+          <a class="navigation" @click="collect">
             <i class="iconfont iconfont-collect">
-              <van-icon name="star-o" />
+              <van-icon name="star-o" :class="{collect:status}" />
+              <van-icon name="star" color="#FF734C" :class="{collect:!status}" />
             </i>
           </a>
         </div>
@@ -140,7 +144,7 @@
         <div class="media-left">已选</div>
         <div class="media-center">一往情深</div>
         <div class="media-right">
-         <van-icon name="ellipsis" />
+          <van-icon name="ellipsis" />
         </div>
       </div>
       <div class="media">
@@ -324,47 +328,47 @@
             style
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180615111320443.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180615111320443.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_201806151113212.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_201806151113212.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180615111321943.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180615111321943.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180615111322546.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180615111322546.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180719134209307.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180719134209307.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180615111323757.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180615111323757.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180719134135380.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180719134135380.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="//img01.hua.com/uploadpic/images/by_20180719134122599.jpg"
             data-original="//img01.hua.com/uploadpic/images/by_20180719134122599.jpg"
             alt="产品详情图"
           />
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="https://img02.hua.com/pc/images/xianhua_cardstyle.jpg"
             data-original="https://img02.hua.com/pc/images/xianhua_cardstyle.jpg"
             alt="产品详情图"
           />
@@ -437,7 +441,7 @@
         <div class="well-body">
           <p>我们相信优秀的平台环境可以吸引同样气质、热爱花礼行业的优秀人才。</p>
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="https://img02.hua.com/m/pro_detail/m_details_point_06.png"
             data-original="https://img02.hua.com/m/pro_detail/m_details_point_06.png"
             alt="优秀平台汇聚优秀人才"
           />
@@ -448,13 +452,42 @@
         <div class="well-body">
           <p>联合GIMC打造“勇敢爱”系列原创微电影、赞助《不要音乐》大型音乐旅行节目，全网播放超5000万次。</p>
           <img
-            src="https://img02.hua.com/m/pro_detail/375x409.png"
+            src="https://img02.hua.com/m/pro_detail/m_details_point_07.png"
             data-original="https://img02.hua.com/m/pro_detail/m_details_point_07.png"
             alt="跨界音乐微电影"
           />
         </div>
       </div>
     </section>
+    <aside id="scrollbox" class="scrollbox" style="display: block;" @click="topTo">
+      <div id="scrollbox-goTop" class="scrollbox-item">
+        <i class="iconfont iconfont-top">↑</i>
+      </div>
+    </aside>
+    <nav class="tabbar">
+      <div class="tabbar-left">
+        <a href="javascript:huatools.contact();" class="tabbar-item">
+          <van-icon name="service-o" size="22px" />
+          <p>客服</p>
+        </a>
+        <a href="/Shopping/ShowCart" class="tabbar-item">
+          <van-icon name="shopping-cart-o" size="22px" />
+          <p>购物车</p>
+        </a>
+      </div>
+      <div class="tabbar-right">
+        <a 
+          id="addCart"
+          href="#/shopBag"
+          class="tabbar-item tabbar-item-block"
+        >加入购物车</a>
+        <a
+          id="soonBuy"
+          href="/order"
+          class="tabbar-item tabbar-item-block tabbar-item-orange"
+        >立即购买</a>
+      </div>
+    </nav>
   </div>
 </template>
 <script>
@@ -462,6 +495,7 @@ export default {
   data() {
     return {
       current: 0,
+      status: true,
       hua: [],
       imgs: [
         "https://img01.hua.com/uploadpic/newpic/9010966.jpg",
@@ -475,16 +509,52 @@ export default {
     const hua = await this.$axios(
       "https://www.easy-mock.com/mock/5d4abd6a334a102e1be864b8/hua/"
     );
-    // console.log(hua.data.data[0]);
-    this.hua = hua.data.data[0];
+     var ids=this.$route.query.id
+    this.hua = hua.data.data[ids];
   },
   methods: {
+    collect() {
+      this.status = !this.status;
+      localStorage.setItem("status", this.status);
+      // console.log(localStorage.getItem('status'));
+    },
+    topTo() {
+      this.$el.scrollIntoView();
+    },
+    scrollToTop(el) {
+      let topBtn = document.getElementById("scrollbox");
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      let browserHeight = window.outerHeight;
+      if (scrollTop > browserHeight) {
+        scrollbox.style.display = "block";
+      } else {
+        scrollbox.style.display = "none";
+      }
+    },
     backTo() {
       this.$router.go(-1);
     },
     onChange(index) {
       this.current = index;
+    },
+    init() {
+      if (localStorage.getItem("status")) {
+        this.status = localStorage.getItem("status");
+        console.log(this.status);
+      } else {
+        this.status = true;
+      }
     }
+  },
+  mounted() {
+    this.init();
+    window.addEventListener("scroll", this.scrollToTop);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.scrollToTop);
   }
 };
 </script>

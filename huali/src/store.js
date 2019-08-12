@@ -5,16 +5,23 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    show: 'block'
+    show: 'block',
+    isLogin:''
   },
   mutations: {
     setShow (state, data) {
       state.show = data
+    },
+    setLogin(state,data){
+      state.isLogin=data
     }
   },
   getters: {
     getShow (state) {
       return state.show
+    },
+    getLogin(state){
+      return state.isLogin
     }
   }
   // actions: {

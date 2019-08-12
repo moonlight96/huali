@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     init(){
-      var count =localStorage.getItem('active');
+      var count =sessionStorage.getItem('active');
       if(!count){
         this.active=0;
       }else{
@@ -49,7 +49,7 @@ export default {
      this.$router.push({
        name
      })
-     localStorage.setItem('active',index)
+     sessionStorage.setItem('active',index)
    }
   },
   mounted (){
